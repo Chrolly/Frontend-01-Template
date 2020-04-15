@@ -1,6 +1,6 @@
 # 每周总结可以写在这里
 
-前端知识体系脑图：https://juejin.im/post/5e95a5c1e51d4546c72e19c9
+前端知识体系脑图：https://shimo.im/mindmaps/9X8HTkwxjRH9XHxY
 
 开始建立知识体系，本次主要补充HTML元素类型、JS的7种语言类型：
 

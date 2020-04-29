@@ -1,5 +1,7 @@
-一、随堂练习
+# 随堂练习
+
 * 编写带括号的四则运算产生式
+```
 <Number> = "0" | "1" | "2" | ... | "9"
 
 <DecimalNumber> = "0" | (("1" | "2" | ... | "9" ) <Number>* )
@@ -18,16 +20,15 @@
 <LogicalExpression> = <AdditiveExpression> |
     <LogicalExpression> "||" <AdditiveExpression>
     <LogicalExpression> "&&" <AdditiveExpression>    
-
+```
 * 尽可能寻找你知道的计算机语言，尝试把它们分类
-0- 型文法（无限制文法或短语结构文法）：
++ 0- 型文法（无限制文法或短语结构文法）：
 包括所有的文法。
-
-1- 型文法（上下文相关文法）：
++ 1- 型文法（上下文相关文法）：
 JavaScript语言
 Python语言
 
-2- 型文法（上下文无关文法）：
++ 2- 型文法（上下文无关文法）：
 C/C++语言
 C#语言
 PHP语言
@@ -37,12 +38,14 @@ Go语言
 Scala语言
 Swift语言
 
-3- 型文法（正规文法）：
++ 3- 型文法（正规文法）：
 无
 
-二、小作业:
+## 小作业
+
 * 写一个正则表达式 匹配所有 Number 直接量
 Number 直接量分为十进制、二进制、八进制、十六进制四种类型。
+```
 <!-- 整数 -->
 var pattern = /^\-{0,1}[0-9]{1,}$/,
 	str = '789';
@@ -68,8 +71,10 @@ console.log(pattern.test(str));
 var pattern = //^\-{0,1}[0-9]{1,}|^[-]?[0-9]+(\.[0-9]+)?|^[0,1]+$|^(0o)[0-7]+|^(0x|0X)[0-9A-Fa-f]+$/,
 	str = '';
 console.log(pattern.test(str));
+```
 
 * 写一个 UTF-8 Encoding 的函数
+```
 function utf8Encoding(str){
   let res = '';
   for(let s of str){
@@ -78,8 +83,10 @@ function utf8Encoding(str){
   return ('\\u'+res);
 }
 utf8Encoding('严')
+```
 
 * 写一个正则表达式，匹配所有的字符串直接量，单引号和双引号
+```
 <!-- Unicode -->
 /^[\u4E00-\u9FFF]+$/
 <!-- ASCII -->
@@ -90,3 +97,4 @@ utf8Encoding('严')
 /\"(.* )\"/
 <!-- 所有字符串直接量 -->
 /\"(.* )\"|\'(.* )\'|^\\u00[2-7][1-9A-E]|^[\u4E00-\u9FFF]+$/
+```

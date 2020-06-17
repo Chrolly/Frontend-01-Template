@@ -1,0 +1,218 @@
+<!-- 整理 API 的方法如下：
+从 Window 的属性中，找到 API 名称；
+查阅 MDN 或者 Google，找到 API 所在的标准；
+阅读标准，手工或者用代码整理出标准中包含的 API；
+用代码在 Window 的属性中过滤掉标准中涉及的 API。 -->
+
+<script>
+    let names = Object.getOwnPropertyNames(window);
+
+    function filterOut(names, props) {
+        let set = new Set();
+        props.forEach(o => set.add(o));
+        return names.filter(e => !set.has(e));
+    }
+    // 首先调用Object.getOwnPropertyNames(window)，在我的环境中，共有934个属性
+
+    {
+        let js = new Set();
+        let objects = ["globalThis", "console", "BigInt", "BigInt64Array", "BigUint64Array", "Infinity", "NaN", "undefined", "eval", "isFinite", "isNaN", "parseFloat", "parseInt", "decodeURI", "decodeURIComponent", "encodeURI", "encodeURIComponent", "Array", "Date", "RegExp", "Promise", "Proxy", "Map", "WeakMap", "Set", "WeakSet", "Function", "Boolean", "String", "Number", "Symbol", "Object", "Error", "EvalError", "RangeError", "ReferenceError", "SyntaxError", "TypeError", "URIError", "ArrayBuffer", "SharedArrayBuffer", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray", "Atomics", "JSON", "Math", "Reflect", "escape", "unescape"];
+        objects.forEach(o => js.add(o));
+        names = names.filter(e => !js.has(e));
+
+    }
+    names = names.filter(e => {
+        try {
+            return !(window[e].prototype instanceof Node)
+        } catch (err) {
+            return true;
+        }
+    }).filter(e => e != "Node");
+    // 过滤javascript标准规定的属性，DOM包含了document属性和一系列的构造器，剩余716个属性
+
+
+    names = filterOut(names, ["window", "self", "document", "name", "location", "history", "customElements", "locationbar", "menubar", " personalbar", "scrollbars", "statusbar", "toolbar", "status", "close", "closed", "stop", "focus", " blur", "frames", "length", "top", "opener", "parent", "frameElement", "open", "navigator", "applicationCache", "alert", "confirm", "prompt", "print", "postMessage", "console"]);
+
+    // 过滤掉windows对象上的属性，剩余568个属性
+    // https://html.spec.whatwg.org/#window
+
+    {
+        let names = Object.getOwnPropertyNames(window)
+        let js = new Set();
+        let objects = ["BigInt", "BigInt64Array", "BigUint64Array", "Infinity", "NaN", "undefined", "eval", "isFinite", "isNaN", "parseFloat", "parseInt", "decodeURI", "decodeURIComponent", "encodeURI", "encodeURIComponent", "Array", "Date", "RegExp", "Promise", "Proxy", "Map", "WeakMap", "Set", "WeakSet", "Function", "Boolean", "String", "Number", "Symbol", "Object", "Error", "EvalError", "RangeError", "ReferenceError", "SyntaxError", "TypeError", "URIError", "ArrayBuffer", "SharedArrayBuffer", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray", "Atomics", "JSON", "Math", "Reflect", "escape", "unescape"];
+        objects.forEach(o => js.add(o));
+        names = names.filter(e => !js.has(e));
+
+        names = names.filter(e => {
+            try {
+                return !(window[e].prototype instanceof Node)
+            } catch (err) {
+                return true;
+            }
+        }).filter(e => e != "Node")
+
+        let windowprops = new Set();
+        objects = ["window", "self", "document", "name", "location", "history", "customElements", "locationbar", "menubar", " personalbar", "scrollbars", "statusbar", "toolbar", "status", "close", "closed", "stop", "focus", " blur", "frames", "length", "top", "opener", "parent", "frameElement", "open", "navigator", "applicationCache", "alert", "confirm", "prompt", "print", "postMessage", "console"];
+        objects.forEach(o => windowprops.add(o));
+        names = names.filter(e => !windowprops.has(e));
+    }
+
+    // 过滤掉windows对象的函数和属性，剩余685个属性
+
+    names = names.filter(e => !e.match(/^on/))
+
+    // 过滤掉一些事件，剩余612个属性
+
+    names = names.filter(e => !e.match(/^webkit/))
+
+    // 过滤掉webkit开头的属性，剩余568个属性
+
+    {
+        let interfaces = new Set();
+        objects = ["ApplicationCache", "AudioTrack", "AudioTrackList", "BarProp", "BeforeUnloadEvent", "BroadcastChannel", "CanvasGradient", "CanvasPattern", "CanvasRenderingContext2D", "CloseEvent", "CustomElementRegistry", "DOMStringList", "DOMStringMap", "DataTransfer", "DataTransferItem", "DataTransferItemList", "DedicatedWorkerGlobalScope", "Document", "DragEvent", "ErrorEvent", "EventSource", "External", "FormDataEvent", "HTMLAllCollection", "HashChangeEvent", "History", "ImageBitmap", "ImageBitmapRenderingContext", "ImageData", "Location", "MediaError", "MessageChannel", "MessageEvent", "MessagePort", "MimeType", "MimeTypeArray", "Navigator", "OffscreenCanvas", "OffscreenCanvasRenderingContext2D", "PageTransitionEvent", "Path2D", "Plugin", "PluginArray", "PopStateEvent", "PromiseRejectionEvent", "RadioNodeList", "SharedWorker", "SharedWorkerGlobalScope", "Storage", "StorageEvent", "TextMetrics", "TextTrack", "TextTrackCue", "TextTrackCueList", "TextTrackList", "TimeRanges", "TrackEvent", "ValidityState", "VideoTrack", "VideoTrackList", "WebSocket", "Window", "Worker", "WorkerGlobalScope", "WorkerLocation", "WorkerNavigator"];
+        objects.forEach(o => interfaces.add(o));
+
+        names = names.filter(e => !interfaces.has(e));
+    }
+
+    // 在 HTML 标准中找到所有的接口，也过滤掉，剩余512个
+    //https://html.spec.whatwg.org/
+
+
+    // 到此，已经过滤掉了所有的事件、windows对象、javascript全局对象和DOM相关的属性
+
+    // 其他属性
+
+    names = names.filter(e => e != "Intl")
+
+    //http://www.ecma-international.org/ecma-402/5.0/index.html#Title
+    // 511
+
+
+
+    names = filterOut(names, ["TextDecoder", "TextEncoder", "TextDecoderStream", "TextEncoderStream"]);
+
+    //https://encoding.spec.whatwg.org/#dom-textencoder
+    // 507
+
+    names = filterOut(names, [
+        "WebGLRenderingContext",
+        "WebGL2RenderingContext",
+        "WebGLActiveInfo",
+        "WebGLBuffer",
+        "WebGLContextEvent",
+        "WebGLFramebuffer",
+        "WebGLProgram",
+        "WebGLQuery",
+        "WebGLRenderbuffer",
+        "WebGLSampler",
+        "WebGLShader",
+        "WebGLShaderPrecisionFormat",
+        "WebGLSync",
+        "WebGLTexture",
+        "WebGLTransformFeedback",
+        "WebGLUniformLocation",
+        "WebGLVertexArrayObject"
+    ]);
+
+    //来自 WebGL 标准:  https://www.khronos.org/registry/webgl/specs/latest/1.0/
+    // 490
+
+    names = filterOut(names, [
+        "AudioContext",
+        "AudioNode",
+        "AudioParam",
+        "ended",
+        "OscillatorNode",
+        "AudioBuffer",
+        "AudioBufferSourceNode",
+        "MediaElementAudioSourceNode",
+        "MediaStreamAudioSourceNode",
+        "BiquadFilterNode",
+        "ConvolverNode",
+        "DelayNode",
+        "DynamicsCompressorNode",
+        "GainNode",
+        "StereoPannerNode",
+        "WaveShaperNode",
+        "PeriodicWave",
+        "AudioDestinationNode",
+        "MediaStreamAudioDestinationNode",
+        "AnalyserNode",
+        "ChannelSplitterNode",
+        "ChannelMergerNode",
+        "AudioListener",
+        "PannerNode",
+        "ScriptProcessorNode",
+        "audioprocess",
+        "AudioProcessingEvent",
+        "OfflineAudioContext",
+        "complete",
+        "OfflineAudioCompletionEvent",
+        "AudioWorkerNode",
+        "AudioWorkerGlobalScope",
+        "AudioProcessEvent",
+        "JavaScriptNode",
+        "WaveTableNode",
+        "AudioWorklet"
+    ]);
+
+    //Web Audio API : https://www.w3.org/TR/webaudio/
+    // 462
+
+    names = filterOut(names, ["SyncManager"]);
+    //https://wicg.github.io/BackgroundSync/spec/#sync-manager-interface
+    // 461
+
+    names = filterOut(names, [
+        "SourceBufferList",
+        "SourceBuffer",
+        "URL"
+    ]);
+
+    //这份标准中包含了三个接口，这份标准还扩展了一些接口，但是没有扩展 window: https://w3c.github.io/media-source/#sourcebufferlist
+    // 458
+
+    names = filterOut(names, [
+        "RTCPeerConnection",
+        "RTCDataChannel",
+        "RTCDataChannelEvent",
+        "RTCSessionDescription",
+        "RTCSessionDescriptionCallback",
+        "RTCStatsReport",
+        "RTCIceCandidate",
+        "RTCIceTransport",
+        "RTCIceServer",
+        "RTCPeerConnectionIceEvent",
+        "RTCRtpSender",
+        "RTCRtpReceiver",
+        "RTCRtpContributingSource",
+        "RTCTrackEvent",
+        "RTCConfiguration",
+        "RTCSctpTransport",
+        "RTCSctpTransportState",
+
+    ]);
+    // https://www.w3.org/TR/screen-orientation/
+    // 446
+
+    names = filterOut(names, [
+        "MediaStreamTrack",
+        "MediaStreamTrack"
+    ]);
+    // https://www.w3.org/TR/mediacapture-streams/#stream-api
+    // https://www.w3.org/TR/html52/
+    /*
+
+        //https://streams.spec.whatwg.org/#blqs-class
+
+        names = filterOut(names, ["ReadableStream", "ReadableStreamDefaultReader", "ReadableStreamBYOBReader", "ReadableStreamDefaultController", "ReadableByteStreamController", "ReadableStreamBYOBRequest", "WritableStream", "WritableStreamDefaultWriter", "WritableStreamDefaultController", "TransformStream", "TransformStreamDefaultController", "ByteLengthQueuingStrategy", "CountQueuingStrategy"]);
+
+
+
+        
+
+         */
+    console.log(names);
+    console.log(names.length);
+</script>

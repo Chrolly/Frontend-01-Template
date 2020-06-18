@@ -175,44 +175,575 @@
 
     names = filterOut(names, [
         "RTCPeerConnection",
+        "RTCIceCandidate",
+        "RTCCertificate",
+        "RTCRtpSender",
+        "RTCRtpReceiver",
+        "RTCRtpTransceiver",
+        "RTCDtlsTransport",
+        "RTCSctpTransport",
+        "RTCErrorEvent",
+        "RTCSessionDescription",
         "RTCDataChannel",
         "RTCDataChannelEvent",
         "RTCSessionDescription",
         "RTCSessionDescriptionCallback",
         "RTCStatsReport",
-        "RTCIceCandidate",
         "RTCIceTransport",
         "RTCIceServer",
         "RTCPeerConnectionIceEvent",
         "RTCRtpSender",
-        "RTCRtpReceiver",
         "RTCRtpContributingSource",
         "RTCTrackEvent",
         "RTCConfiguration",
-        "RTCSctpTransport",
         "RTCSctpTransportState",
-
+        "RTCDTMFSender",
+        "RTCDTMFToneChangeEvent",
+        "RTCPeerConnectionIceErrorEvent",
+        "RTCError"
     ]);
-    // https://www.w3.org/TR/screen-orientation/
+    // https://www.w3.org/TR/webrtc/
     // 446
 
     names = filterOut(names, [
+        "BlobEvent",
+        "CanvasCaptureMediaStreamTrack",
+        "InputDeviceInfo",
+        "MediaDeviceKind",
+        "MediaDeviceInfo",
+        "MediaDevices",
+        "MediaStream",
+        "MediaStreamConstraints",
+        "MediaStreamEvent",
         "MediaStreamTrack",
-        "MediaStreamTrack"
+        "MediaStreamTrackEvent",
+        "MediaTrackCapabilities",
+        "MediaTrackConstraints",
+        "MediaTrackSettings",
+        "MediaTrackSupportedConstraints",
+        "NavigatorUserMedia",
+        "NavigatorUserMediaError",
+        "OverconstrainedError",
+        "URL"
+    ]);
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API
+
+    names = filterOut(names, [
+        "ReadableStream",
+        "ReadableStreamDefaultReader",
+        "ReadableStreamDefaultController",
+        "WritableStream",
+        "WritableStreamDefaultWriter",
+        "WritableStreamDefaultController",
+        "ByteLengthQueuingStrategy",
+        "CountQueuingStrategy"
+
     ]);
     // https://www.w3.org/TR/mediacapture-streams/#stream-api
+
+
+
     // https://www.w3.org/TR/html52/
-    /*
-
-        //https://streams.spec.whatwg.org/#blqs-class
-
-        names = filterOut(names, ["ReadableStream", "ReadableStreamDefaultReader", "ReadableStreamBYOBReader", "ReadableStreamDefaultController", "ReadableByteStreamController", "ReadableStreamBYOBRequest", "WritableStream", "WritableStreamDefaultWriter", "WritableStreamDefaultController", "TransformStream", "TransformStreamDefaultController", "ByteLengthQueuingStrategy", "CountQueuingStrategy"]);
 
 
+    names = filterOut(names, [
+        "MediaRecorderOptions",
+        "MediaRecorder"
+    ]);
 
-        
+    // https://www.w3.org/TR/mediastream-recording/
 
-         */
+    names = filterOut(names, [
+        "IDBEnvironment",
+        "IDBFactory",
+        "IDBOpenDBRequest",
+        "IDBDatabase",
+        "IDBTransaction",
+        "IDBRequest",
+        "IDBObjectStore",
+        "IDBIndex",
+        "IDBCursor",
+        "IDBCursorWithValue",
+        "IDBKeyRange",
+        "IDBLocaleAwareKeyRange",
+        "IDBVersionChangeEvent"
+    ]);
+
+    // https://www.w3.org/TR/IndexedDB-2/
+
+    names = filterOut(names, [
+        "ScreenOrientation"
+    ]);
+
+    // https://www.w3.org/TR/screen-orientation/
+
+    // names = filterOut(names, [
+    //     "SVGPointList",
+    //     "SVGRectElement",
+    //     "SVGCircleElement",
+    //     "SVGEllipseElement",
+    //     "SVGLineElement",
+    //     "SVGAnimatedPoints",
+    //     "SVGPolylineElement",
+    //     "SVGPolygonElement"
+    // ]);
+
+    // SVG : https://www.w3.org/TR/SVG11/shapes.html#InterfaceSVGRectElement
+
+    names = filterOut(names, [
+        "SVGElement",
+        "SVGPathElement",
+        "SVGGraphicsElement",
+        "SVGGeometryElement",
+        "SVGNumber",
+        "SVGAnimatedNumberList",
+        "SVGLength",
+        "SVGAnimatedLength",
+        "SVGRectElement",
+        "SVGAnimatedLengthList",
+        "SVGAngle",
+        "SVGAnimatedAngle",
+        "SVGNumberList",
+        "SVGLengthList",
+        "SVGPointList",
+        "SVGTransformList",
+        "SVGStringList",
+        "SVGAnimatedPoints",
+        "SVGTransformList",
+        "SVGNameList",
+        "SVGTransform",
+        "SVGAnimatedBoolean",
+        "SVGAnimatedEnumeration",
+        "SVGAnimatedInteger",
+        "SVGAnimatedNumber",
+        "SVGAnimatedLength",
+        "SVGAnimatedAngle",
+        "SVGAnimatedString",
+        "SVGAnimatedRect",
+        "SVGAnimatedNumberList",
+        "SVGAnimatedLengthList",
+        "SVGUnitTypes",
+        "SVGTests",
+        "SVGFitToViewBox",
+        "SVGZoomAndPan",
+        "SVGURIReference",
+        "SVGAnimatedString"
+    ]);
+
+    // SVG:  https://www.w3.org/TR/SVG/types.html#definitions
+
+    names = filterOut(names, [
+        "SVGAnimatedTransformList",
+        "SVGPreserveAspectRatio",
+        "SVGAnimatedPreserveAspectRatio"
+
+    ]);
+    // SVG DOM API: https://svgwg.org/svg2-draft/coords.html#DOMInterfaces
+
+    names = filterOut(names, [
+        "PerformanceServerTiming",
+        "PerformanceResourceTiming"
+    ]);
+
+    // https://w3c.github.io/server-timing/
+
+    names = filterOut(names, [
+        "PerformancePaintTiming"
+    ]);
+
+    // https://w3c.github.io/paint-timing/
+
+    names = filterOut(names, [
+        "PerformanceObserverEntryList",
+        "Performance",
+        "PerformanceEntry",
+        "PerformanceObserver",
+        "PerformanceObserverEntryList"
+    ]);
+
+    // https://w3c.github.io/performance-timeline/
+
+
+    names = filterOut(names, [
+        "Performance",
+        "PerformanceNavigationTiming",
+        "PerformanceTiming",
+        "PerformanceNavigation"
+    ]);
+
+    // https://www.w3.org/TR/navigation-timing/
+
+    names = filterOut(names, [
+        "SVGRect",
+        "SVGAnimatedRect",
+        "SVGStylable",
+        "SVGMatrix",
+        "SVGTransformable"
+    ]);
+
+    // https://www.w3.org/TR/SVG11/types.html#InterfaceSVGRect
+
+    names = filterOut(names, [
+        "NodeList",
+        "HTMLCollection",
+        "MutationObserver",
+        "MutationRecord",
+        "Document",
+        "DOMImplementation",
+        "DocumentType",
+        "DocumentFragment",
+        "ShadowRoot",
+        "Element",
+        "NamedNodeMap",
+        "Attr",
+        "CharacterData",
+        "Text",
+        "ProcessingInstruction",
+        "Comment"
+    ]);
+
+    // https://dom.spec.whatwg.org/#text
+
+    names = filterOut(names, [
+        "XMLHttpRequest",
+        "XMLHttpRequestUpload",
+        "XMLHttpRequestEventTarget",
+        "FormData",
+        "ProgressEvent"
+    ]);
+
+    // https://xhr.spec.whatwg.org/
+
+    names = filterOut(names, [
+        "XMLSerializer",
+        "DOMParser",
+        "Element",
+        "Range"
+    ]);
+
+    // https://w3c.github.io/DOM-Parsing/#the-xmlserializer-interface
+
+
+    names = filterOut(names, [
+        "DOMTokenList",
+        "XPathEvaluator",
+        "XPathEvaluatorBase",
+        "XPathExpression",
+        "XPathNSResolver",
+        "XPathResult",
+        "XPathNamespace",
+        "DOMConfiguration",
+        "DOMError",
+        "DOMErrorHandler",
+        "DOMImplementationList",
+        "DOMImplementationSource",
+        "DOMLocator",
+        "DOMObject",
+        "DOMUserData",
+        "Entity",
+        "EntityReference",
+        "NameList",
+        "Notation",
+        "TypeInfo",
+        "UserDataHandler"
+    ]);
+
+    // https://www.w3.org/TR/DOM-Level-3-XPath/xpath.html#XPathResult
+
+    names = filterOut(names, [
+        "DOMPoint",
+        "DOMPointReadOnly",
+        "DOMRect",
+        "DOMRectReadOnly",
+        "DOMRectList",
+        "DOMQuad",
+        "DOMMatrix",
+        "DOMMatrixReadOnly",
+        "DOMException"
+    ]);
+
+    // https://drafts.fxtf.org/geometry/#DOMPoint
+
+    names = filterOut(names, [
+        "Navigator",
+        "Geolocation",
+        "GeolocationPositionError",
+        "GeolocationPosition",
+        "GeolocationCoordinates",
+        "GeolocationPositionError"
+    ]);
+
+    // https://w3c.github.io/geolocation-api/
+
+
+    names = filterOut(names, [
+        "StyleSheet",
+        "CSSStyleSheet",
+        "StyleSheetList",
+        "DocumentOrShadowRoot",
+        "LinkStyle",
+        "CSSRuleList",
+        "CSSRule",
+        "CSSStyleRule",
+        "CSSImportRule",
+        "CSSGroupingRule",
+        "CSSMediaRule",
+        "CSSPageRule",
+        "CSSMarginRule",
+        "CSSNamespaceRule",
+        "CSSStyleDeclaration"
+    ]);
+
+    // https://drafts.csswg.org/cssom/#the-stylesheetlist-interface
+
+    names = filterOut(names, [
+        "CSSStyleValue",
+        "StylePropertyMapReadOnly",
+        "StylePropertyMap",
+        "CSSStyleRule",
+        "ElementCSSInlineStyle",
+        "CSSUnparsedValue",
+        "CSSVariableReferenceValue",
+        "CSSKeywordValue",
+        "CSSNumericValue",
+        "CSSUnitValue",
+        "CSSMathValue",
+        "CSSMathSum",
+        "CSSMathProduct",
+        "CSSMathNegate",
+        "CSSMathInvert",
+        "CSSMathMin",
+        "CSSMathMax",
+        "CSSMathClamp",
+        "CSSNumericArray",
+        "CSSTransformValue",
+        "CSSTransformComponent",
+        "CSSTranslate",
+        "CSSRotate",
+        "CSSScale",
+        "CSSSkew",
+        "CSSSkewX",
+        "CSSSkewY",
+        "CSSPerspective",
+        "CSSMatrixComponent",
+        "CSSImageValue"
+    ]);
+
+    // CSS： https://drafts.css-houdini.org/css-typed-om-1/
+
+
+    names = filterOut(names, [
+        "Bluetooth",
+        "BluetoothAdvertisingData",
+        "BluetoothCharacteristicProperties",
+        "BluetoothDevice",
+        "BluetoothRemoteGATTCharacteristic",
+        "BluetoothRemoteGATTDescriptor",
+        "BluetoothRemoteGATTServer",
+        "BluetoothRemoteGATTService"
+    ]);
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API
+
+    names = filterOut(names, [
+        "XR",
+        "XRSession",
+        "XRRenderState",
+        "XRFrame",
+        "XRSpace",
+        "XRReferenceSpace",
+        "XRBoundedReferenceSpace",
+        "XRView",
+        "XRViewport",
+        "XRRigidTransform",
+        "XRPose",
+        "XRViewerPose",
+        "XRInputSource",
+        "XRInputSourceArray",
+        "XRWebGLLayer",
+        "WebGLRenderingContextBase",
+        "XRSessionEvent",
+        "XRInputSourceEvent",
+        "XRInputSourcesChangeEvent",
+        "XRReferenceSpaceEvent",
+        "XRSessionEvent",
+        "XRInputSourcesChangeEvent"
+    ]);
+
+    // https://www.w3.org/TR/webxr/
+
+    names = filterOut(names, [
+        "USB",
+        "USBConnectionEvent",
+        "USBDevice",
+        "USBInTransferResult",
+        "USBOutTransferResult",
+        "USBIsochronousInTransferPacket",
+        "USBIsochronousInTransferResult",
+        "USBIsochronousOutTransferPacket",
+        "USBIsochronousOutTransferResult",
+        "USBConfiguration",
+        "USBInterface",
+        "USBAlternateInterface",
+        "USBEndpoint",
+        "USBPermissionResult"
+    ]);
+
+    // https://wicg.github.io/webusb/
+
+    names = filterOut(names, [
+        "KeyboardLayoutMap",
+        "Keyboard"
+    ]);
+
+    // https://wicg.github.io/keyboard-map/
+
+    names = filterOut(names, [
+        "MIDIInputMap",
+        "MIDIOutputMap",
+        "MIDIAccess",
+        "MIDIPort",
+        "MIDIInput",
+        "MIDIOutput",
+        "MIDIMessageEvent",
+        "MIDIConnectionEvent"
+    ]);
+
+    // https://webaudio.github.io/web-midi-api/
+
+    names = filterOut(names, [
+        "visualViewport"
+    ]);
+
+    // https: //wicg.github.io/visual-viewport/
+
+    names = filterOut(names, [
+        "location",
+        "XMLSerializer",
+        "closed",
+        "console",
+        "controllers",
+        "customElements",
+        "crypto",
+        "devicePixelRatio",
+        "dialogArguments",
+        "document",
+        "DOMMatrix",
+        "DOMMatrixReadOnly",
+        "DOMPoint",
+        "DOMPointReadOnly",
+        "DOMQuad",
+        "DOMRect",
+        "DOMRectReadOnly",
+        "event",
+        "frameElement",
+        "frames",
+        "fullScreen",
+        "history",
+        "innerHeight",
+        "innerWidth",
+        "isSecureContext",
+        "length",
+        "location",
+        "locationbar",
+        "localStorage",
+        "menubar",
+        "messageManager",
+        "mozInnerScreenX",
+        "mozInnerScreenY",
+        "name",
+        "navigator",
+        "opener",
+        "orientation",
+        "outerHeight",
+        "outerWidth",
+        "pageXOffset",
+        "pageYOffset",
+        "parent",
+        "performance",
+        "personalbar",
+        "screen",
+        "screenX",
+        "screenLeft",
+        "screenY",
+        "screenTop",
+        "scrollbars",
+        "scrollMaxX",
+        "scrollMaxY",
+        "scrollX",
+        "scrollY",
+        "self",
+        "sessionStorage",
+        "sidebar",
+        "speechSynthesis",
+        "status",
+        "statusbar",
+        "toolbar",
+        "top",
+        "visualViewport",
+        "window",
+        "alert",
+        "blur",
+        "cancelAnimationFrame",
+        "cancelIdleCallback",
+        "clearImmediate",
+        "close",
+        "confirm",
+        "dump",
+        "find",
+        "focus",
+        "getComputedStyle",
+        "getDefaultComputedStyle",
+        "getSelection",
+        "matchMedia",
+        "maximize",
+        "minimize",
+        "moveBy",
+        "moveTo",
+        "open",
+        "postMessage",
+        "print",
+        "prompt",
+        "requestAnimationFrame",
+        "requestIdleCallback",
+        "resizeBy",
+        "resizeTo",
+        "scroll",
+        "scrollBy",
+        "scrollByLines",
+        "scrollByPages",
+        "scrollTo",
+        "setCursor",
+        "setImmediate",
+        "setResizable",
+        "sizeToContent",
+        "stop",
+        "updateCommands",
+        "addEventListener",
+        "dispatchEvent",
+        "atob",
+        "btoa",
+        "clearInterval",
+        "setInterval",
+        "clearTimeout",
+        "setTimeout",
+        "createImageBitmap",
+        "fetch"
+    ]);
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window
+
+
+    names = filterOut(names, ["ReadableStream", "ReadableStreamDefaultReader", "ReadableStreamBYOBReader", "ReadableStreamDefaultController", "ReadableByteStreamController", "ReadableStreamBYOBRequest", "WritableStream", "WritableStreamDefaultWriter", "WritableStreamDefaultController", "TransformStream", "TransformStreamDefaultController", "ByteLengthQueuingStrategy", "CountQueuingStrategy"]);
+
+    //https://streams.spec.whatwg.org/#blqs-class
+
+
+
+
+
+
     console.log(names);
     console.log(names.length);
 </script>

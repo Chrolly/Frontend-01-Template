@@ -4,13 +4,13 @@
 
 一个问题：把一个元素所有的子元素逆序
 
-排序前 | 排序后
----------|----------
- 1 | 5
- 2 | 4
- 3 | 3
- 4 | 2
- 5 | 1
+| 排序前 | 排序后 |
+| ------ | ------ |
+| 1      | 5      |
+| 2      | 4      |
+| 3      | 3      |
+| 4      | 2      |
+| 5      | 1      |
 
 ```html
 <div id="a">
@@ -52,14 +52,14 @@
 
 ### 回顾知识点
 
-导航类操作 | 导航类操作
----------|----------
- parentNode | parentElement
- chilNodes | children
- firstChild | firstElementChild
- lastChild | lastElementChild
- nextSibling | nextElementSibling
- previousSibling | previousElementSibling
+| 导航类操作      | 导航类操作             |
+| --------------- | ---------------------- |
+| parentNode      | parentElement          |
+| chilNodes       | children               |
+| firstChild      | firstElementChild      |
+| lastChild       | lastElementChild       |
+| nextSibling     | nextElementSibling     |
+| previousSibling | previousElementSibling |
 
 修改操作 |
 ---------|
@@ -161,7 +161,7 @@ range.insertNode(document.createTextNode("aaaa"))
 - document.styleSheets[0].insertRule("p{color: pink;}", 0)
 - document.styleSheets[0].removeRule(0)
 
--Rule
+- Rule
 
 - CSSStyleRule
   - selectorText string
@@ -201,6 +201,8 @@ range.insertNode(document.createTextNode("aaaa"))
 ## 作业
 
 - [把所有的 API 画进脑图里](./apis.html)
+- [看完第 10 周第 2 节课程，完成 TicTacToe 的练习](./TicTacToe/4.html)
+- 根据第 10 周第 2 节课程内容，自己完成一个五子棋的游戏编程（选做）
 
 ## 参考链接
 

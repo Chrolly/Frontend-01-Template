@@ -1,0 +1,27 @@
+Crousel
+
+state
+activeIndex
+
+property
+loop time imglist color forward
+
+attribute
+startIndex loop time imglist autoplay color forward
+
+children
+2
+append remove add
+event
+change click hover swipe resize dbclick
+
+method
+next() prew() goto() play() stop()
+
+config
+setInterval(tick, 16)
+setTimeout()
+requestAnimationFrame()
+mode: "useRAF", "useTimeout"
+
+CrouselView

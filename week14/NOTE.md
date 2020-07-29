@@ -1,23 +1,42 @@
 # 每周总结可以写在这里
 
-## 学习笔记
+## 组件化 | 为组件添加JSX语法
 
-## 作业
+### 参考链接
 
-- 完成课上代码，并为轮播组件添加鼠标操作
+1. 安装 webpack： <https://webpack.js.org/concepts/>
+2. <https://babeljs.io/docs/en/babel-plugin-transform-react-jsx/>
+3. <https://github.com/babel/babel-loader>
+4. <https://facebook.github.io/jsx/>
 
-## 参考链接
+### 参考代码
 
-### 课程一参考链接
+```js
+ "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0"
+```
 
-- 安装 webpack： <https://webpack.js.org/concepts/>
-- <https://babeljs.io/docs/en/babel-plugin-transform-react-jsx/>
-- <https://github.com/babel/babel-loader>
-- <https://facebook.github.io/jsx/>
+```js
+let component = <Div id="a" cls="b" style="width:100px;height:100px;background-color:lightgreen">
+        <Div></Div>
+        <Div></Div>
+        <Div></Div>
+    </Div>
+```
 
-### 课程二
+课程中讲解怎么去掉create错误
 
-#### 课程二参考链接
+```js
+React = {}；
+React.createElement = function createElement(Cls, attributes){}
+```
+
+## 组件化 | 轮播组件
+
+### 参考链接
 
 ```js
 let data = [

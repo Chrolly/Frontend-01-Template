@@ -1,12 +1,9 @@
-"use strict";
-
 // console.log('Hello, world!');
 // phantom.exit();
-var page = require('webpage').create();
 
+var page = require('webpage').create();
 page.open('https://baidu.com/', function (status) {
   console.log("Status: " + status);
-
   if (status === "success") {
     // var body = page.evaluate(function () {
     //   var toString = function (pad, element) {
@@ -28,6 +25,5 @@ page.open('https://baidu.com/', function (status) {
     // });
     console.log('Page body is ' + document.body.children);
   }
-
   phantom.exit();
 });

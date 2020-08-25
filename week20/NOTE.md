@@ -8,3 +8,23 @@
 - JSLint
 
 ## 发布系统 | OAuth
+
+![image-20200825194847728](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825194847728.png)
+
+![image-20200825195019839](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825195019839.png)
+
+![image-20200825195121943](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825195121943.png)
+
+拿code去换token
+
+![image-20200825201648921](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825201648921.png)
+
+![image-20200825201557545](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825201557545.png)
+
+
+
+## 参考链接
+
+- [PhantomJS 下载地址](https://phantomjs.org/download)
+- <https://developer.github.com/v3/>
+- [OAuth](https://justauth.wiki/#/quickstart/oauth)

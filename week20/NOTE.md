@@ -9,23 +9,23 @@
 
 ## 发布系统 | OAuth
 
-![image-20200825194847728](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825194847728.png)
+![image-20200825194847728](./images/image-20200825194847728.png)
 
-![image-20200825195019839](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825195019839.png)
+![image-20200825195019839](./images/image-20200825195019839.png)
 
-![image-20200825195121943](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825195121943.png)
+![image-20200825195121943](./images/image-20200825195121943.png)
 
 拿code去换token
 
-![image-20200825201648921](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825201648921.png)
+![image-20200825201648921](./images/image-20200825201648921.png)
 
-![image-20200825201557545](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825201557545.png)
+![image-20200825201557545](./images/image-20200825201557545.png)
 
 API认证
 
-![image-20200825202020726](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825202020726.png)
+![image-20200825202020726](./images/image-20200825202020726.png)
 
-![image-20200826100151952](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200826100151952.png)
+![image-20200826100151952](./images/image-20200826100151952.png)
 
 
 

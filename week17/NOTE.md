@@ -4,7 +4,7 @@
 
 ## 前端开发中常用的工具链：从开发的角度去看
 
-vue-cli介绍与使用
+vue-cli 介绍与使用
 
 ```node
 npm install -g @vue/cli
@@ -17,7 +17,7 @@ npm run serve
 
 ![image-20200815110225521](E:\program\docsify\docs\asset\image-20200815110225521.png)
 
-[reactjs介绍](https://react.docschina.org/docs/create-a-new-react-app.html)
+[reactjs 介绍](https://react.docschina.org/docs/create-a-new-react-app.html)
 
 ```node
 npx create-react-app my-app
@@ -27,7 +27,7 @@ npm start
 
 ![image-20200815110301701](E:\program\docsify\docs\asset\image-20200815110301701.png)
 
-angulatjs介绍
+angulatjs 介绍
 
 ```node
 npm install -g @angular/cli
@@ -38,9 +38,9 @@ ng new my-app
 
 初始化工具决定了开发/调试、测试、发布等工具的使用。
 
-## yeoman介绍
+## yeoman 介绍
 
-[yeoman介绍](https://yeoman.io/)
+[yeoman 介绍](https://yeoman.io/)
 
 ```js
 madir generator-winter
@@ -52,39 +52,18 @@ npm link
 
 ![image-20200815113047277](E:\program\docsify\docs\asset\image-20200815113047277.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## 课程新增内容
 
 函数式编程
 
 ```js
-(g => 
-    (f => f(f)(
-    		self =>
-                g((...args) => self(self).apply(this.args))
-            		
-    ))(
-    	self => {
-            return n => n > 0 ? self(n-1)+n : 0;
-        })(100)
-)
+(g) =>
+  ((f) => f(f)((self) => g((...args) => self(self).apply(this.args))))(
+    (self) => {
+      return (n) => (n > 0 ? self(n - 1) + n : 0);
+    },
+  )(100);
 // 5050
 ```
 
 ![image-20200815112123448](E:\program\docsify\docs\asset\image-20200815112123448.png)
-
-
-
-
-

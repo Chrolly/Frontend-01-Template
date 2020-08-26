@@ -21,6 +21,12 @@
 
 ![image-20200825201557545](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825201557545.png)
 
+API认证
+
+![image-20200825202020726](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200825202020726.png)
+
+![image-20200826100151952](E:\program\GeekUniversity\Frontend-01-Template\week20\images\image-20200826100151952.png)
+
 
 
 ## 参考链接

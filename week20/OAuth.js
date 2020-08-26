@@ -12,7 +12,7 @@
 // }
 
 {
-  let code = "1935cedb7ed9f5bc2746";
+  let code = "994e026f963b18b40ec3";
   let state = "abc123";
   let client_secret = "decaa408d75a3dea9e0c8b31557a12ad1aef4f6d";
   let client_id = "Iv1.ab6e944813dfbe11";
@@ -24,20 +24,27 @@
   xhr.send(null);
 
   xhr.addEventListener("readystatechange", function (event) {
-    if (event.readystate === 4) {
+    if (event.readyState === 4) {
       debugger
       console.log(event.responseText)
     }
   })
 }
 
+// GET https://github.com/login/oauth/authorize 
+
+// https://api.github.com/user
+
+// Authorization: token OAUTH - TOKEN
+
 {
   let xhr = new XMLHttpRequest;
   xhr.open("GET", `https://api.github.com/user`, true);
+  xhr.setRequestHeader("Authorization", "token 1260c1ae8419c8010063f1aa93b18499498f9694");
   xhr.send(null);
 
   xhr.addEventListener("readystatechange", function (event) {
-    if (xhr.readystate === 4) {
+    if (this.readyState === 4) {
       debugger
       console.log(xhr.responseText)
     }

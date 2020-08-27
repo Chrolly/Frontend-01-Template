@@ -1,0 +1,36 @@
+<body>
+  <div id="my" class="test"></div>
+</body>
+<script>
+  window.addEventListener('contextmenu', (event) => event.preventDefault());
+  document.addEventListener('selectstart', (event) => event.preventDefault());
+  document.addEventListener('touchmove', (event) => event.preventDefault(), {
+    passive: false,
+  });
+
+  let x = 0,
+    y = 0;
+  let my = document.getElementById('my');
+  enableGesture(my);
+  my.addEventListener('pan', (event) => {
+    console.log(x + event.clientx - event.startX);
+    console.log(y + event.clientY - event.startY);
+
+    my.style.transform = `translate(${x + event.clientX - event.startx}px，${
+      y + event.clientY - event.startY
+    }px)`;
+  });
+
+  my.addEventListener('panend', (event) => {
+    x = +event.clientx - event.startX;
+    y = y + event.clientY - event.startY;
+  });
+</script>
+<style>
+  .test {
+    transform: translate(0px, 0px);
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+  }
+</style>

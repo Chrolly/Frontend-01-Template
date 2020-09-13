@@ -6,12 +6,12 @@
 
 ### 点击区域与括号匹配
 
-### 完成Tries字典树、KMP、WildCard算法
+### 完成 Tries 字典树、KMP、WildCard 算法
 
 ### 选做题
 
-- 把正则风格的tokenize 换成状态机
+- 把正则风格的 tokenize 换成状态机
 - 实现带括号的四则运算
-- 带？的kmp
+- 带？的 kmp
 
 ## 参考链接
